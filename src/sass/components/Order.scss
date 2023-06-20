@@ -1,0 +1,71 @@
+@import '../helpers/placeholders.scss';
+@import '../helpers/variables.scss';
+
+.Order {
+    font-family: $lato;
+    padding: 100px 0 50px;
+    background-color: $brighterGrey;
+    h1 {
+        @extend %titles;
+        margin: 3px auto 10px;
+        width: 318px;
+    }
+    p {
+        width: 460px;
+        text-align: center;
+        margin: 20px auto;
+    }
+    form {
+        .__area {
+            width: 520px;
+            margin: 20px auto;
+            display: flex;
+            .__column {
+                display: flex;
+                flex-direction: column;
+                width: 255px;
+                input {
+                    @extend %inputs;
+                    height: 25px;
+                    // height: 25px;
+                    // width: 250px;
+                    // font-size: 15px;
+                    // color:   grey;
+                    // margin: 2px 0;
+                    // border-radius: 2px;
+                    &::placeholder {
+                        // color:   grey;
+                    }
+                }
+            }
+            textarea {
+                @extend %inputs;
+                width: 250px;
+                margin-left: 5px;
+            }
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            width: 80px;
+            height: 30px;
+            line-height: 25px;
+            font-family: $lato;
+            font-size: 15px;
+            border-radius: 8px;
+            background-color: $darkBlue;
+            color: $grey;
+        }
+    }
+}
+// background-color: black;
+// %__column {
+    //     display: flex;
+    //     flex-direction: column;
+    //     width: 250px;
+// }
+// input {
+//     @extend %__column;
+//     height: 25px;
+//     font-size: 15px;
+// }

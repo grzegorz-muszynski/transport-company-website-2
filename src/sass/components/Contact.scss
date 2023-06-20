@@ -1,0 +1,35 @@
+@import '../helpers/placeholders.scss';
+@import '../helpers/variables.scss';
+
+.Contact {
+    margin: 0px auto;
+    padding: 50px 100px;
+    // background-color: $grey;
+    width: 1100px;
+    h1 {
+        @extend %titles;
+        margin: 20px auto;
+        width: 120px;
+    }
+    .__data {
+        display: flex;
+        justify-content: space-around;
+    }
+    .__group {
+        font-family: $lato;
+        width: 250px;
+        text-align: center;
+        p {
+            margin: 5px 0;
+        }
+    }
+    .__maps {
+        height: 300px;
+        display: flex;
+        justify-content: space-between;
+        iframe {
+            height: 100%;
+            width: 540px;
+        }
+    }
+}

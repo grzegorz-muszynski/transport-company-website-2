@@ -1,0 +1,19 @@
+@import '../helpers/variables.scss';
+
+.Footer {
+    background-color: $darkBlue;
+    color: $grey; 
+    font-family: $lato;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:before {
+        content: 'Copyright 2022 © AM Global';
+        padding-left: 5px;
+    }
+    &:after {
+        content: 'Wykonanie ARDEO Grzegorz Muszyński';
+        padding-right: 5px;
+    }
+}

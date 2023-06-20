@@ -1,0 +1,13 @@
+// @import url('../assets/fonts/Lato-Medium.ttf');
+
+@font-face {
+    font-family: lato;
+    src: url(../../assets/fonts/Lato-Medium.ttf);
+}
+// Colors
+$darkBlue: hsl(205, 47%, 20%);
+$grey: hsl(100, 3%, 90%);
+$brighterGrey: hsl(100, 3%, 94%);
+
+// Fonts
+$lato: lato;

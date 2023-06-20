@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.scss';
+
+import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Gallery from './components/Gallery';
+import Menu from './components/Menu';
+import Order from './components/Order';
+import Wallpaper from './components/Wallpaper';
+
+import './sass/components/About.scss';
+import './sass/components/Contact.scss';
+import './sass/components/Footer.scss';
+import './sass/components/Gallery.scss';
+import './sass/components/Menu.scss';
+import './sass/components/Order.scss';
+import './sass/components/Wallpaper.scss';
+import './sass/helpers/variables.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div id="App">
+        <Menu/>
+        <Wallpaper/>
+        <About />
+        <Gallery />
+        <Contact />
+        <Order />
+        {/* <Routes>
+          <Route path='/' element={<About />} />
+          <Route path='/' element={<Gallery />} />
+          <Route path='/' element={<Order />} />
+          <Route path='/' element={<Contact />} />
+        </Routes> */}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

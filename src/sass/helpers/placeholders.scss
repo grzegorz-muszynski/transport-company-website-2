@@ -1,0 +1,24 @@
+@import '../helpers/variables.scss';
+
+%titles {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    color: $darkBlue;
+    font-family: $lato;
+    // font-weight: 600;
+}
+
+%inputs {
+    width: 250px;
+    line-height: 25px;
+    font-size: 15px;
+    color:   grey;
+    margin: 2px 0;
+    padding: 0;
+    border-radius: 2px;
+    &::placeholder {
+        font-family: $lato;
+        text-indent: 4px;
+    }
+    // background-color: pink;
+}

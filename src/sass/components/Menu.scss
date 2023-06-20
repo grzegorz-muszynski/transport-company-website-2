@@ -1,0 +1,35 @@
+@import '../helpers/variables';
+
+* {
+    // border: 1px solid red;
+}
+.Menu {
+    // background-color: $darkBlue;
+    background-color: $grey;
+    // border-bottom: 2px solid $darkBlue;  
+    border: 2px solid $darkBlue;
+    height: 91px;
+    width: calc(100% - 4px);
+    position: fixed;
+    top: 0;
+    .Menu__container {
+        padding: 8px 0;
+        margin: 0 auto;
+        width: 1300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            width: 300px;
+        }
+        ul {
+            list-style-type: none;
+            li {
+                display: inline-block;
+                padding: 0 8px;
+                font-family: $lato;
+                font-size: 18px;
+            }
+        }
+    }
+}
