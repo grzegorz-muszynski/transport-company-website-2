@@ -10,7 +10,7 @@ export default function Order() {
             
                 <div className='__area'>
                     <div className='__column'>
-                        <input type="text" name="Imię" required placeholder="Imię i nazwisko" autofocus/>
+                        <input type="text" name="Imię" required placeholder="Imię i nazwisko" />
                         <input type="email" name="E-mail" required placeholder="Adres e-mail" />
                         <input type="text" name="Numer telefonu" required placeholder="Numer telefonu" />
                         <input type="date" name="date" />

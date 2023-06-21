@@ -15,6 +15,7 @@
     color:   grey;
     margin: 2px 0;
     padding: 0;
+    border: 1px solid black;
     border-radius: 2px;
     &::placeholder {
         font-family: $lato;
