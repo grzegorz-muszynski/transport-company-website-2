@@ -1,9 +1,20 @@
 @import '../helpers/variables';
 
 * {
-    // border: 1px solid red;
+    border: 1px solid red;
 }
 .Menu {
+    .__flags {
+        position: fixed;
+        z-index: 3;
+        right: 20px;
+        top: 35px;
+        img {
+            height: 20px;
+            width: 40px;
+            padding: 0 5px;
+        };
+    }
     .__navBar {
         background-color: $darkBlue;
         height: 91px;
@@ -33,21 +44,22 @@
             transition: all 1s; 
         }
         .centered {
-            margin: 32px auto;
-            transition: all 1s; 
+            margin: 32px auto 0;
+            transition: all 2s;
         }
         .onRight {
-            margin: 32px 48%;
-            transition: all 1s; 
+            margin: 32px auto 0;
+            transform: translateX(200px);
+            transition: all 2s;
         }
         ul {
             padding: 8px 0;
-            width: 465px; 
+            width: 505px; 
             list-style-type: none;
             padding: 0 5px;
             li {
                 display: inline-block;
-                padding: 0 8px;
+                padding: 0 12px;
                 font-family: $lato;
                 font-size: 18px;
                 color: white;

@@ -30,6 +30,10 @@ export default function Menu() {
 
     return (
         <div className='Menu'>
+            <div className='__flags'>
+                <img src={require('../assets/flags/flagPL.gif')} />
+                <img src={require('../assets/flags/flagUK.gif')} />
+            </div>
             <div className='__navBar'>
                     <img 
                         src={require('../assets/logoDarkBlue2.png')} 
