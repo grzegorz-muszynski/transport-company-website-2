@@ -45,23 +45,18 @@
             transition: all 1s; 
         }
         .centered { // Classes sticked to ul element
-            // margin: 32px auto 0;
             transition: all 800ms;
         }
         .onRight { // Classes sticked to ul element
-            // margin: 32px auto 0;
             transform: translateX(200px);
             transition: all 800ms;
         }
         ul {
             margin: 32px auto 0;
-            // margin: 0 auto;
             padding: 8px 0;
             width: 505px; 
             list-style-type: none;
             padding: 0 5px;
-            // position: relative;
-            // bottom: 39px;
             li {
                 display: inline-block;
                 padding: 0 12px;
@@ -69,7 +64,6 @@
                 font-size: 18px;
                 color: white;
                 &:hover {
-                    // color: hsl(0, 0%, 50%);
                     color: $lightBlue;
                     cursor: pointer;
                 }

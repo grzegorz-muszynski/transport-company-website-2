@@ -4,7 +4,6 @@
 .Contact {
     margin: 0px auto;
     padding: 50px 0;
-    // width: 100%;
     h1 {
         @extend %titles;
         margin: 20px auto;
@@ -92,23 +91,19 @@
         .__data {
             width: 260px;
             height: 530px;
-            // padding-bottom: 40px;
             .__group-wider,
             .__group-narrower {
                 display: block;
                 width: 100%;
             }
             .base {
-                // position: relative;
                 left: 0;
             }
             .office {
-                // position: relative;
                 top: 0;
                 right: 0;
             }
             .invoice {
-                // position: relative;
                 bottom: 0;
             }
         }

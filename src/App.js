@@ -19,21 +19,10 @@ import './sass/components/Slider.scss';
 import './sass/helpers/variables.scss';
 
 function App() {
-  // use
 
   return (
     <Router>
       <div id="App">
-        {/* <div className='__flags'>
-            <img src={require('./assets/flags/flagPL.gif')} />
-            <img src={require('./assets/flags/flagUK.gif')} />
-        </div>
-        <Menu />
-        <About />
-        <Gallery />
-        <Contact />
-        <Order /> */}
-
           <Routes>
             <Route path='/' element={
               <>
@@ -44,7 +33,7 @@ function App() {
                 <Order language={'pol'} />
                 <Footer language={'pol'} />
               </>
-            } />
+            }/>
             <Route path='/eng' element={
               <>
                 <Menu />
