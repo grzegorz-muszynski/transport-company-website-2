@@ -71,12 +71,12 @@
             }
             .office {
                 position: relative;
-                top: 192px;
+                top: 182px;
                 right: 260px;
             }
             .invoice {
                 position: relative;
-                bottom: 145px;
+                bottom: 135px;
             }
         }
         .__maps {
@@ -91,8 +91,8 @@
     .Contact {
         .__data {
             width: 260px;
-            height: 570px;
-            padding-bottom: 40px;
+            height: 530px;
+            // padding-bottom: 40px;
             .__group-wider,
             .__group-narrower {
                 display: block;

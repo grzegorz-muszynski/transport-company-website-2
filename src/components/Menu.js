@@ -9,13 +9,24 @@ export default function Menu(props) {
     const menuScrolling = (e) => {
         let screenWidth = window.innerWidth; // Number
         
-        if (screenWidth > 1000) {
+        if (screenWidth > 1220) {
             let height = Number(e.target.dataset.height);
             window.scrollTo({ top: height, behavior: "smooth" });
-        } else {
+        } else if (screenWidth > 850) {
             let height = Number(e.target.dataset.height2);
             window.scrollTo({ top: height, behavior: "smooth" });
+        } else if (screenWidth > 570) {
+            let height = Number(e.target.dataset.height3);
+            window.scrollTo({ top: height, behavior: "smooth" });
+        } else if (screenWidth > 470) {
+            let height = Number(e.target.dataset.height4);
+            window.scrollTo({ top: height, behavior: "smooth" });
+        } else {
+            let height = Number(e.target.dataset.height5);
+            window.scrollTo({ top: height, behavior: "smooth" });
         }
+
+        setShowMenu(false)
     }
 
     const toggleMenu = () => {
@@ -45,13 +56,14 @@ export default function Menu(props) {
                         src={require('../assets/logoDarkBlue2.png')} 
                         onClick={menuScrolling} 
                         data-height={0} 
-                        data-height2={0}
+                        data-height2={0} 
+                        data-height3={0} 
+                        data-height4={0} 
+                        data-height5={0} 
                         className={wallpaperVisible ? 'hidden' : 'show'}
                         alt='Logo'
                     />
                     <ul 
-                        // className={wallpaperVisible ? 'centered' : 'onRight'}
-                        // {showMenu ? {className += ' ul-shown'} : {className += ' ul-hidden'}}
                         className={
                             (wallpaperVisible && showMenu) ? 'centered ul-shown' : 
                                 ((wallpaperVisible && !showMenu) ? 'centered ul-hidden' :
@@ -60,20 +72,35 @@ export default function Menu(props) {
                     >
                         <li 
                             onClick={menuScrolling} 
-                            data-height={500} 
-                            data-height2={3000}
+                            data-height={720} 
+                            data-height2={720} 
+                            data-height3={720} 
+                            data-height4={440} 
+                            data-height5={440} 
                         >{props.language === 'pol' ? 'O NAS' : 'ABOUT'}</li>
                         <li 
                             onClick={menuScrolling} 
-                            data-height={1000}
+                            data-height={1100} 
+                            data-height2={1100} 
+                            data-height3={1300} 
+                            data-height4={930} 
+                            data-height5={1030} 
                         >{props.language === 'pol' ? 'GALERIA' : 'GALLERY'}</li>
                         <li 
                             onClick={menuScrolling} 
-                            data-height={1550}
+                            data-height={1700} 
+                            data-height2={1650} 
+                            data-height3={2500} 
+                            data-height4={1900} 
+                            data-height5={1700} 
                         >{props.language === 'pol' ? 'KONTAKT' : 'CONTACT'}</li>
                         <li 
                             onClick={menuScrolling} 
-                            data-height={2025}
+                            data-height={4000} 
+                            data-height2={4000} 
+                            data-height3={4000} 
+                            data-height4={4000} 
+                            data-height5={4000} 
                         >{props.language === 'pol' ? 'ZAMÓW TRANSPORT' : 'ORDER QUOTATION'}</li>
                     </ul>
             </div>
