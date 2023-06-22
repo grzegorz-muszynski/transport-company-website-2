@@ -1,32 +1,35 @@
 @import '../helpers/variables';
 
 * {
-    border: 1px solid red;
+    // border: 1px solid red;
 }
 .Menu {
+    p { // Menu button
+        display: none;
+    }
     .__flags {
         position: fixed;
         z-index: 3;
         right: 20px;
-        top: 35px;
+        top: 33px;
         img {
             height: 20px;
-            width: 40px;
-            padding: 0 5px;
-        };
+            width: 32px;
+            padding: 0 4px;
+        }
     }
     .__navBar {
         background-color: $darkBlue;
         height: 91px;
-        width: calc(100% - 4px);
+        width: 100vw;
         position: fixed;
         z-index: 2;
         top: 0;
-        img {
+        img { // Small logo
             position: absolute;
             width: 300px;
             top: 5px;
-            left: 22%;
+            left: calc(50% - 380px);
             &:hover {
                 cursor: pointer;
             }
@@ -34,29 +37,31 @@
         .hidden {
             transform: translateX(-100%);
             opacity: 0;
-            padding-right: 0;
             transition: all 1s;
         }
         .show {
             transform: translateX(0);
             opacity: 1;
-            padding-right: 50px;
             transition: all 1s; 
         }
-        .centered {
-            margin: 32px auto 0;
-            transition: all 2s;
+        .centered { // Classes sticked to ul element
+            // margin: 32px auto 0;
+            transition: all 800ms;
         }
-        .onRight {
-            margin: 32px auto 0;
+        .onRight { // Classes sticked to ul element
+            // margin: 32px auto 0;
             transform: translateX(200px);
-            transition: all 2s;
+            transition: all 800ms;
         }
         ul {
+            margin: 32px auto 0;
+            // margin: 0 auto;
             padding: 8px 0;
             width: 505px; 
             list-style-type: none;
             padding: 0 5px;
+            // position: relative;
+            // bottom: 39px;
             li {
                 display: inline-block;
                 padding: 0 12px;
@@ -64,20 +69,119 @@
                 font-size: 18px;
                 color: white;
                 &:hover {
-                    color: hsl(0, 0%, 50%);
+                    // color: hsl(0, 0%, 50%);
+                    color: $lightBlue;
                     cursor: pointer;
                 }
             }
         }
     }
 }
-
 .Wallpaper {
     img {
         height: 800px;
         width: 100%;
         object-fit: cover;
         object-position: 50% 45%;
-        // object-fit: contain;
+    }
+}
+
+@media (max-width: $threshold1) {
+    .Menu {
+        .__navBar {
+            p { // Menu button
+                display: block;
+                position: fixed;
+                z-index: 3;
+                top: 11px;
+                font-size: 20px;
+                color: white;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .middle {
+                right: calc(50% - 50px);
+                transition: right 800ms;
+            }
+            .moved {
+                right: calc(50% - 250px);
+                transition: right 800ms;
+            }
+            img { // Small logo
+                left: calc(50% - 150px);
+            }
+            .centered { // Classes sticked to ul element
+                margin: 0;
+                transition: all 800ms;
+            }
+            .onRight {
+                margin: 0;
+                transform: translateX(0px);
+            }
+            .ul-shown {
+                display: block;
+            }
+            .ul-hidden {
+                display: none;
+            }
+            ul {
+                height: 146px;
+                background-color: $darkBlue;
+                width: 100vw;
+                position: absolute;
+                top: 91px;
+                border-top: 1px solid black;
+                li {
+                    display: block;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                    padding: 0;
+                    margin: 0;
+                    &:hover {
+                        background-color: $blue;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: $threshold2) {
+    .Menu {
+        .__navBar {
+            img { // Small logo
+                display: none;
+            }
+            .moved {
+                right: calc(50% - 50px);
+            }
+        }
+    }
+}
+@media (max-width: $threshold3) {
+    .Wallpaper {
+        height: 430px;
+        img {
+            height: 430px;
+            margin-top: 91px;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+}
+@media (max-width: $threshold4) {
+    .Menu {    
+        .__flags {
+            img {
+                padding: 0 8px; 
+            }
+        }
+        .__navBar {
+            .middle,
+            .moved {
+                right: calc(50% + 10px);
+            }
+        }
     }
 }

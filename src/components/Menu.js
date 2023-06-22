@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 export default function Menu(props) {
     const bottomRef = useRef();
     const [wallpaperVisible, setWallpaperVisible] = useState(true);
+    const [showMenu, setShowMenu] = useState(false);
 
     const menuScrolling = (e) => {
         let screenWidth = window.innerWidth; // Number
@@ -15,6 +16,10 @@ export default function Menu(props) {
             let height = Number(e.target.dataset.height2);
             window.scrollTo({ top: height, behavior: "smooth" });
         }
+    }
+
+    const toggleMenu = () => {
+        setShowMenu(!showMenu)
     }
 
     useEffect(() => {
@@ -32,6 +37,10 @@ export default function Menu(props) {
                 <NavLink to='/eng'><img src={require('../assets/flags/flagUK.gif')} alt='English flag' /></NavLink>
             </div>
             <div className='__navBar'>
+                    <p 
+                        onClick={toggleMenu}
+                        className={wallpaperVisible ? 'middle' : 'moved'}
+                    >MENU</p>
                     <img 
                         src={require('../assets/logoDarkBlue2.png')} 
                         onClick={menuScrolling} 
@@ -40,7 +49,15 @@ export default function Menu(props) {
                         className={wallpaperVisible ? 'hidden' : 'show'}
                         alt='Logo'
                     />
-                    <ul className={wallpaperVisible ? 'centered' : 'onRight'}>
+                    <ul 
+                        // className={wallpaperVisible ? 'centered' : 'onRight'}
+                        // {showMenu ? {className += ' ul-shown'} : {className += ' ul-hidden'}}
+                        className={
+                            (wallpaperVisible && showMenu) ? 'centered ul-shown' : 
+                                ((wallpaperVisible && !showMenu) ? 'centered ul-hidden' :
+                                    (!wallpaperVisible && showMenu) ? 'onRight ul-shown' : 'onRight ul-hidden')
+                        }
+                    >
                         <li 
                             onClick={menuScrolling} 
                             data-height={500} 
@@ -62,7 +79,7 @@ export default function Menu(props) {
             </div>
             <div className='Wallpaper'>
                 <img 
-                    src={require('../assets/wallpaper.png')} 
+                    src={require('../assets/wallpaper2.png')} 
                     alt='Wallpaper' 
                     ref={bottomRef}
                 />

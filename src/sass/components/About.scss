@@ -1,6 +1,10 @@
 @import '../helpers/placeholders.scss';
 @import '../helpers/variables.scss';
 
+
+* {
+    // border: 1px solid red;
+}
 .About {
     width: 1120px;
     margin: 80px auto;
@@ -8,7 +12,7 @@
     justify-content: space-around;
     align-items: center;
     img {
-        width: 25%;
+        width: 280px;
         display: inline-block;
     }
     span {
@@ -18,14 +22,58 @@
         h1 {
             @extend %titles;
             margin: 3px 0 10px;
-            // text-decoration: underline;
-            // text-underline-offset: 7px;
-            // color: $darkBlue;
         }
         p {
             text-indent: 40px;
             margin: 0;
             text-align: justify;
+        }
+    }
+}
+@media(max-width: $threshold1) {
+    .About {
+        width: 800px;
+        span {
+            width: 480px;
+        }
+    }
+}
+@media(max-width: $threshold2) {
+    .About {
+        width: 100%;
+        height: 460px;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        margin: 30px 0;
+        h1 {
+            text-align: center;
+        }
+        span {
+            width: 480px;
+        }
+    }
+}
+@media(max-width: $threshold3) {
+    .About {
+        position: relative;
+        top: 90px;
+        height: 460px;
+        h1 {
+        }
+        span {
+            width: 430px;
+        }
+    }
+}
+@media(max-width: $threshold4) {
+    .About {
+        position: relative;
+        top: 90px;
+        height: 550px;
+        h1 {
+        }
+        span {
+            width: 280px;
         }
     }
 }

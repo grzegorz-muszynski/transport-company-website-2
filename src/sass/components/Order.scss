@@ -28,9 +28,6 @@
                 input {
                     @extend %inputs;
                     height: 25px;
-                    &::placeholder {
-                        // color:   grey;
-                    }
                 }
             }
             textarea {
@@ -53,14 +50,34 @@
         }
     }
 }
-// background-color: black;
-// %__column {
-    //     display: flex;
-    //     flex-direction: column;
-    //     width: 250px;
-// }
-// input {
-//     @extend %__column;
-//     height: 25px;
-//     font-size: 15px;
-// }
+@media(max-width: $threshold3) {
+    .Order {
+        h1 {
+            margin: 3px auto 10px;
+            width: calc(100% - 20px);
+            line-height: 50px;
+            padding: 0 10px;
+            // font-size: 15px;;
+        }
+        p {
+            width: 270px;
+            text-align: center;
+            margin: 20px auto;
+        }
+        form {
+            .__area {
+                width: 260px;
+                // height: 500px;
+                flex-direction: column;
+                .__column,
+                textarea {
+                    margin: 2px auto 0;
+                }
+                textarea {
+                    position: relative;
+                    right: 1px;
+                }
+            }
+        }   
+    }
+}

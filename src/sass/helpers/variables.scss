@@ -4,10 +4,19 @@
     font-family: lato;
     src: url(../../assets/fonts/Lato-Medium.ttf);
 }
-// Colors
-$darkBlue: rgb(27, 55, 75);
-$grey: hsl(100, 3%, 90%);
-$brighterGrey: hsl(100, 3%, 94%);
 
 // Fonts
 $lato: lato;
+
+// Colors
+$darkBlue: rgb(27, 55, 75);
+$blue: hsl(205, 47%, 30%);
+$lightBlue: hsl(205, 47%, 60%);
+$grey: hsl(100, 3%, 90%);
+$brighterGrey: hsl(100, 3%, 94%);
+
+// Media
+$threshold1: 1220px;
+$threshold2: 850px;
+$threshold3: 570px;
+$threshold4: 470px;

@@ -31,3 +31,32 @@
         padding-right: 5px;
     }
 }
+@media(max-width: $threshold3) {
+    %footer {
+        height: 80px;
+        line-height: 40px;
+        display: block;
+    }
+    .Footer-english,
+    .Footer-polish {
+        &:before,
+        &:after {
+            display: block;
+            text-align: center;           
+        }
+    }
+}
+@media(max-width: $threshold4) {
+    %footer {
+        height: 60px;
+        line-height: 30px;
+        display: block;
+    }
+    .Footer-english,
+    .Footer-polish {
+        &:before,
+        &:after {
+            font-size: 13px;         
+        }
+    }
+}
