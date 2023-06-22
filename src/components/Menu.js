@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-export default function Menu() {
+export default function Menu(props) {
     const bottomRef = useRef();
     const [wallpaperVisible, setWallpaperVisible] = useState(true);
 
@@ -17,13 +18,9 @@ export default function Menu() {
     }
 
     useEffect(() => {
-        // console.log('bottomRef', bottomRef.current);
         const observer = new IntersectionObserver((entries, observer) => {
             const entry = entries[0];
-            // console.log('entry', entry);
-            // console.log('entry.isIntersecting', entry.isIntersecting);
             setWallpaperVisible(entry.isIntersecting);
-            // console.log(wallpaperVisible)
         });
         observer.observe(bottomRef.current);
     }, []);
@@ -31,8 +28,8 @@ export default function Menu() {
     return (
         <div className='Menu'>
             <div className='__flags'>
-                <img src={require('../assets/flags/flagPL.gif')} />
-                <img src={require('../assets/flags/flagUK.gif')} />
+                <NavLink to='/'><img src={require('../assets/flags/flagPL.gif')} alt='Polish flag' /></NavLink>
+                <NavLink to='/eng'><img src={require('../assets/flags/flagUK.gif')} alt='English flag' /></NavLink>
             </div>
             <div className='__navBar'>
                     <img 
@@ -40,29 +37,27 @@ export default function Menu() {
                         onClick={menuScrolling} 
                         data-height={0} 
                         data-height2={0}
-                    //     style={wallpaperVisible ? {display: 'none'} : {display: 'block'}}
                         className={wallpaperVisible ? 'hidden' : 'show'}
+                        alt='Logo'
                     />
-                    {/* /> */}
                     <ul className={wallpaperVisible ? 'centered' : 'onRight'}>
-                    {/* <ul> */}
                         <li 
                             onClick={menuScrolling} 
                             data-height={500} 
                             data-height2={3000}
-                        >O NAS</li>
+                        >{props.language === 'pol' ? 'O NAS' : 'ABOUT'}</li>
                         <li 
                             onClick={menuScrolling} 
                             data-height={1000}
-                        >GALERIA</li>
+                        >{props.language === 'pol' ? 'GALERIA' : 'GALLERY'}</li>
                         <li 
                             onClick={menuScrolling} 
                             data-height={1550}
-                        >KONTAKT</li>
+                        >{props.language === 'pol' ? 'KONTAKT' : 'CONTACT'}</li>
                         <li 
                             onClick={menuScrolling} 
                             data-height={2025}
-                        >ZAMÓW TRANSPORT</li>
+                        >{props.language === 'pol' ? 'ZAMÓW TRANSPORT' : 'ORDER QUOTATION'}</li>
                     </ul>
             </div>
             <div className='Wallpaper'>

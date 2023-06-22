@@ -1,34 +1,34 @@
 // import './Contact.css';
 
-export default function Contact() {
+export default function Contact(props) {
 
     return (
         <div className='Contact'>
-            <h1>Kontakt</h1>
+            <h1>{props.language === 'pol' ? 'Kontakt' : 'Contact'}</h1>
             <div className='__data'>
                 <div className='__group'>
-                        <h3>Dane kontaktowe</h3>
+                        <h3>{props.language === 'pol' ? 'Dane kontaktowe' : 'Contact information'}</h3>
                         <p>✉️amglobal.transport@gmail.com</p>
-                        <p>☎️tel: +48 517 292 766</p>
+                        <p>☎️tel.: +48 517 292 766</p>
                         <p>TIMOCOM ID: 397427</p>
                 </div>
                 <div className='__group'>
-                        <h3>Biuro</h3>
-                        <p>ul. A. Mickiewicza 3</p>
+                        <h3>{props.language === 'pol' ? 'Biuro' : 'Office'}</h3>
+                        <p>{props.language === 'pol' && 'ul.'} A. Mickiewicza 3</p>
                         <p>32-200 Miechów</p>
                 </div>
                 <div className='__group'>
-                        <h3>Baza</h3>
+                        <h3>{props.language === 'pol' ? 'Baza' : 'Base'}</h3>
                         <p>Bukowska Wola 46</p>
                         <p>32-200 Miechów</p>
                 </div>
                 <div className='__group'>
-                        <h3>Dane do faktury</h3>
+                        <h3>{props.language === 'pol' ? 'Dane do faktury' : 'Invoice details'}</h3>
                         <p>AM GLOBAL Agnieszka Naziemiec</p>
-                        <p>ul. A. Mickiewicza 3</p>
+                        <p>{props.language === 'pol' && 'ul.'} A. Mickiewicza 3</p>
                         <p>32-200 Miechów</p>
-                        <p>NIP: 659 154 29 24</p>
-                        <p>NIP EU: PL 659 154 29 24</p>
+                        <p>{props.language === 'pol' ? 'NIP' : 'TIN'}: 659 154 29 24</p>
+                        <p>{props.language === 'pol' ? 'NIP' : 'TIN'} EU: PL 659 154 29 24</p>
                 </div>
             </div>
             <div className='__maps'>

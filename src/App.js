@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
 
@@ -19,22 +19,43 @@ import './sass/components/Slider.scss';
 import './sass/helpers/variables.scss';
 
 function App() {
+  // use
 
   return (
     <Router>
       <div id="App">
-        <Menu/>
+        {/* <div className='__flags'>
+            <img src={require('./assets/flags/flagPL.gif')} />
+            <img src={require('./assets/flags/flagUK.gif')} />
+        </div>
+        <Menu />
         <About />
         <Gallery />
         <Contact />
-        <Order />
-        {/* <Routes>
-          <Route path='/' element={<About />} />
-          <Route path='/' element={<Gallery />} />
-          <Route path='/' element={<Order />} />
-          <Route path='/' element={<Contact />} />
-        </Routes> */}
-        <Footer />
+        <Order /> */}
+
+          <Routes>
+            <Route path='/' element={
+              <>
+                <Menu language={'pol'} />
+                <About language={'pol'} />
+                <Gallery language={'pol'} />
+                <Contact language={'pol'} />
+                <Order language={'pol'} />
+                <Footer language={'pol'} />
+              </>
+            } />
+            <Route path='/eng' element={
+              <>
+                <Menu />
+                <About />
+                <Gallery />
+                <Contact />
+                <Order />
+                <Footer />
+              </>} 
+            />
+          </Routes>
       </div>
     </Router>
   );

@@ -1,6 +1,6 @@
 @import '../helpers/variables.scss';
 
-.Footer {
+%footer {
     background-color: $darkBlue;
     color: $grey; 
     font-family: $lato;
@@ -8,12 +8,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.Footer-polish {
+    @extend %footer;
     &:before {
         content: 'Copyright 2022 © AM Global';
         padding-left: 5px;
     }
     &:after {
         content: 'Wykonanie ARDEO Grzegorz Muszyński';
+        padding-right: 5px;
+    }
+}
+.Footer-english {
+    @extend %footer;
+    &:before {
+        content: 'Copyright 2022 © AM Global';
+        padding-left: 5px;
+    }
+    &:after {
+        content: 'Web design by ARDEO Grzegorz Muszyński';
         padding-right: 5px;
     }
 }

@@ -18,7 +18,7 @@ import picture7 from '../assets/gallery/img7.jpg';
 
 // import Slider from '../components/Slider';
 
-export default function Gallery() {
+export default function Gallery(props) {
     const [showSlider, setShowSlider] = useState(false);
     const [currentImage, setCurrentImage] = useState(0);
     const backgrounds = [
@@ -39,7 +39,7 @@ export default function Gallery() {
         picture6,
         picture7
     ];
-    const descriptions = [
+    const descriptionsPol = [
         'Stawiamy na niezawodność',
         'Świadczymy usługi na terenie niemal całej Europy Zachodniej',
         'Wszystkie auta posiadają możliwość ładowania górą',
@@ -47,6 +47,15 @@ export default function Gallery() {
         'Jesteśmy wszędzie tam gdzie oczekuje nas klient',
         'Wszystkie nasze pojazdy mogą być ładowane od boku',
         'Jesteśmy firmą godną zaufania - postaw na nas!'
+    ];
+    const descriptionsEng = [
+        'We focus on reliability',
+        'We provide services in almost all of Western Europe',
+        'All trucks can be top-loaded',
+        'We are constantly expanding our fleet',
+        'We are wherever a client expects us',
+        'All our trucks can be loaded sideways',
+        'We are a trustworthy company so choose us!'
     ];
     let thumbnails = [];
 
@@ -90,7 +99,8 @@ export default function Gallery() {
                 onClick={displaySlider}
             >
                 <div data-digit={i}>
-                    <p data-digit={i}>{descriptions[i]}</p>
+                    {/* <p data-digit={i}>{descriptions[i]}</p> */}
+                    <p data-digit={i}>{props.language === 'pol' ? descriptionsPol[i] : descriptionsEng[i]}</p>
                 </div>
             </div>
         )
@@ -98,7 +108,7 @@ export default function Gallery() {
     
     return (
         <div className='Gallery'>
-            <h1>Galeria</h1>
+            <h1>{props.language === 'pol' ? 'Galeria' : 'Gallery'}</h1>
             <div className='__grid'>
                 {thumbnails.map((image, index) => (
                     thumbnails[index]
@@ -115,7 +125,7 @@ export default function Gallery() {
                     onClick={prevImg}
                 >&#8249;</p>
                 <div>
-                    <img src={slides[currentImage]}/>
+                    <img src={slides[currentImage]} alt='Current slide'/>
                 </div>
                 <p 
                     className='right'
