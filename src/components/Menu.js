@@ -59,8 +59,8 @@ export default function Menu(props) {
     return (
         <div className='Menu'>
             <div className='__flags'>
-                <NavLink to='/'><img src={require('../assets/flags/flagPL.gif')} alt='Polish flag' /></NavLink>
-                <NavLink to='/eng'><img src={require('../assets/flags/flagUK.gif')} alt='English flag' /></NavLink>
+                <NavLink to='/'><img src={require('../assets/flags/flagPL.gif')} alt='Polish flag on transport company website' /></NavLink>
+                <NavLink to='/eng'><img src={require('../assets/flags/flagUK.gif')} alt='English flag on transport company website' /></NavLink>
             </div>
             <div className='__navBar'>
                     <p 
@@ -77,7 +77,7 @@ export default function Menu(props) {
                         data-height4={0} 
                         data-height5={0} 
                         className={wallpaperVisible ? 'hidden' : 'show'}
-                        alt='Logo'
+                        alt='Firma transportowa | AM Global | Miechów | Małopolskie | Zamów transport'
                     />
                     <ul 
                         className={
@@ -101,7 +101,7 @@ export default function Menu(props) {
                             data-height2={1100} 
                             data-height3={1300} 
                             data-height4={930} 
-                            data-height5={1030} 
+                            data-height5={1060} 
                         >{props.language === 'pol' ? 'GALERIA' : 'GALLERY'}</li>
                         <li 
                             onClick={menuScrolling} 
@@ -109,7 +109,7 @@ export default function Menu(props) {
                             data-height2={1650} 
                             data-height3={2500} 
                             data-height4={1900} 
-                            data-height5={1700} 
+                            data-height5={1760} 
                         >{props.language === 'pol' ? 'KONTAKT' : 'CONTACT'}</li>
                         <li 
                             onClick={menuScrolling} 
@@ -117,7 +117,7 @@ export default function Menu(props) {
                             data-height2={4000} 
                             data-height3={4000} 
                             data-height4={4000} 
-                            data-height5={4000} 
+                            data-height5={3140} 
                         >{props.language === 'pol' ? 'ZAMÓW TRANSPORT' : 'ORDER QUOTATION'}</li>
                     </ul>
             </div>

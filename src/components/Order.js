@@ -10,7 +10,7 @@ export default function Order(props) {
                 : 
                 'We encourage you to fill out the form below so that we can contact you as soon as possible.'}
             </p>
-            <form action="https://formsubmit.co/amglobal.transport@gmail.com">
+            <form action="https://formsubmit.co/amglobal.transport@gmail.com" method="POST">
             
                 <div className='__area'>
                     <div className='__column'>
@@ -28,8 +28,6 @@ export default function Order(props) {
                         <input type="number" name="LDM" 
                             placeholder={props.language === 'pol' ? 'Ilość metrów ładownych' : 'Loading meters'} />
                     </div>
-                    
-                    {/* <input type="hidden" name="_next" value="https://amglobal.pl/thankyou.html"/> */}
 
                     <textarea name="comment" rows="8"
                         placeholder={props.language === 'pol' ? 'Komentarz do wyceny' : 'Commentary'}></textarea>

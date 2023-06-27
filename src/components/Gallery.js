@@ -95,11 +95,10 @@ export default function Gallery(props) {
                     backgroundImage: `url(${backgrounds[i]})`
                 }} 
                 key={`Key ${i+1}`} 
-                alt={`Image no. ${i+1}`} 
+                alt={`Usługi transportowe, zdjęcie nr ${i+1}`} 
                 onClick={displaySlider}
             >
                 <div data-digit={i}>
-                    {/* <p data-digit={i}>{descriptions[i]}</p> */}
                     <p data-digit={i}>{props.language === 'pol' ? descriptionsPol[i] : descriptionsEng[i]}</p>
                 </div>
             </div>
@@ -125,7 +124,7 @@ export default function Gallery(props) {
                     onClick={prevImg}
                 >&#8249;</p>
                 <div>
-                    <img src={slides[currentImage]} alt='Current slide'/>
+                    <img src={slides[currentImage]} alt='Transport company'/>
                 </div>
                 <p 
                     className='right'

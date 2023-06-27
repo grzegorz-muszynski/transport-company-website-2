@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
 
 import About from './components/About';
@@ -24,7 +25,7 @@ function App() {
     <Router>
       <div id="App">
           <Routes>
-            <Route path='/' element={
+            <Route exact path='/' element={
               <>
                 <Menu language={'pol'} />
                 <About language={'pol'} />
@@ -34,7 +35,7 @@ function App() {
                 <Footer language={'pol'} />
               </>
             }/>
-            <Route path='/eng' element={
+            <Route exact path='/eng' element={
               <>
                 <Menu />
                 <About />
@@ -49,5 +50,34 @@ function App() {
     </Router>
   );
 }
+//   return (
+//     <Router>
+//       <div id="App">
+//           <Routes>
+//             <Route exact path='/' element={
+//               <>
+//                 <Menu language={'pol'} />
+//                 <About language={'pol'} />
+//                 <Gallery language={'pol'} />
+//                 <Contact language={'pol'} />
+//                 <Order language={'pol'} />
+//                 <Footer language={'pol'} />
+//               </>
+//             }/>
+//             <Route exact path='/eng' element={
+//               <>
+//                 <Menu />
+//                 <About />
+//                 <Gallery />
+//                 <Contact />
+//                 <Order />
+//                 <Footer />
+//               </>} 
+//             />
+//           </Routes>
+//       </div>
+//     </Router>
+//   );
+// }
 
 export default App;

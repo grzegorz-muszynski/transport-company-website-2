@@ -4,7 +4,7 @@ export default function About(props) {
 
     return (
         <div className='About'>
-            <img src={require('../assets/turbines.jpg')} alt="Wind Turbines" />
+            <img src={require('../assets/turbines.jpg')} alt="Firma transportowa AM Global | Miechów | Transport międzynarodowy | Małopolskie | Auta ciężarowe | Zamów transport" />
             <span className="About__text">
                 <h1>{props.language === 'pol' ? 'O nas' : 'About'}</h1>
                 <p>
