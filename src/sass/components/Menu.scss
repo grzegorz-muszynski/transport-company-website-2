@@ -23,7 +23,7 @@
         height: 91px;
         width: 100vw;
         position: fixed;
-        z-index: 2;
+        z-index: 1;
         top: 0;
         img { // Small logo
             position: absolute;
@@ -86,16 +86,18 @@
             p { // Menu button
                 display: block;
                 position: fixed;
-                z-index: 3;
+                z-index: 2;
                 top: 11px;
                 font-size: 20px;
                 color: white;
                 &:hover {
+                    color: $lightBlue;
                     cursor: pointer;
+                    transition: color 500ms;
                 }
             }
             .middle {
-                right: calc(50% - 50px);
+                right: calc(50% - 42px);
                 transition: right 800ms;
             }
             .moved {
@@ -114,10 +116,21 @@
                 transform: translateX(0px);
             }
             .ul-shown {
-                display: block;
+                // display: block;
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+                transition: 500ms ease;        
+
+                
             }
             .ul-hidden {
-                display: none;
+                // display: none;
+                visibility: hidden;
+                opacity: 0.95;
+                transform: translateY(-220px);
+                // transform: translateY(220px);
+                transition: 500ms ease;
             }
             ul {
                 height: 146px;
@@ -135,6 +148,7 @@
                     margin: 0;
                     &:hover {
                         background-color: $blue;
+                        // transition: background-color 900ms;
                     }
                 }
             }
@@ -148,7 +162,7 @@
                 display: none;
             }
             .moved {
-                right: calc(50% - 50px);
+                right: calc(50% - 42px);
             }
         }
     }
@@ -174,7 +188,17 @@
         .__navBar {
             .middle,
             .moved {
-                right: calc(50% + 10px);
+                right: calc(50% - 42px);
+            }
+        }
+    }
+}
+@media (max-width: 350px) {
+    .Menu {    
+        .__flags {
+            right: 5px;
+            img {
+                padding: 0 4px; 
             }
         }
     }

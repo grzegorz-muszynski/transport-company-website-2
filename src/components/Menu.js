@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default function Menu(props) {
     const bottomRef = useRef();
+    const btnMenuRef = useRef();
+    const menuRef = useRef();
     const [wallpaperVisible, setWallpaperVisible] = useState(true);
     const [showMenu, setShowMenu] = useState(false);
 
@@ -25,13 +27,26 @@ export default function Menu(props) {
             let height = Number(e.target.dataset.height5);
             window.scrollTo({ top: height, behavior: "smooth" });
         }
-
         setShowMenu(false)
     }
 
     const toggleMenu = () => {
         setShowMenu(!showMenu)
     }
+
+    function hideMenu() {
+        setShowMenu(false);
+    }
+
+    // useEffect below closes menu whenever sth not being NavBar is clicked
+    useEffect(() => {
+        function handler(e) {
+            if (!btnMenuRef.current.contains(e.target) && !menuRef.current.contains(e.target)) {
+                hideMenu();
+            }
+        }
+        document.addEventListener('mousedown', handler);
+    })
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries, observer) => {
@@ -51,6 +66,7 @@ export default function Menu(props) {
                     <p 
                         onClick={toggleMenu}
                         className={wallpaperVisible ? 'middle' : 'moved'}
+                        ref={btnMenuRef}
                     >MENU</p>
                     <img 
                         src={require('../assets/logoDarkBlue2.png')} 
@@ -69,6 +85,7 @@ export default function Menu(props) {
                                 ((wallpaperVisible && !showMenu) ? 'centered ul-hidden' :
                                     (!wallpaperVisible && showMenu) ? 'onRight ul-shown' : 'onRight ul-hidden')
                         }
+                        ref={menuRef}
                     >
                         <li 
                             onClick={menuScrolling} 
