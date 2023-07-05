@@ -1,6 +1,7 @@
-// import './Order.css';
+import { useState } from 'react';
 
 export default function Order(props) {
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div className='Order'>
@@ -10,8 +11,10 @@ export default function Order(props) {
                 : 
                 'We encourage you to fill out the form below so that we can contact you as soon as possible.'}
             </p>
-            <form action="https://formsubmit.co/amglobal.transport@gmail.com" method="POST">
-            
+            <form 
+                action="https://formsubmit.co/amglobal.transport@gmail.com" method="POST"
+                onSubmit={()=>{setShowModal(true)}}
+            >
                 <div className='__area'>
                     <div className='__column'>
                         <input type="text" name="Imię" required 
@@ -34,9 +37,29 @@ export default function Order(props) {
 
                     <input type="hidden" name="_subject" value="Zapytanie o wycenę transportu"/>
                 </div>
-                <button type="submit">{props.language === 'pol' ? 'Wyślij' : 'Send'}</button>
-                {/* <button type="submit">WYŚLIJ</button> */}
+
+                {/* <button> replaced with <input> due to Safari */}
+                {/* <input id='__button' type='submit' value={props.language === 'pol' ? 'Wyślij' : 'Send'} /> */}
+                <input id='__button' type='submit' value={props.language === 'pol' ? 'WYŚLIJ' : 'SEND'} />
+                {/* <button type="submit">{props.language === 'pol' ? 'Wyślij' : 'Send'}</button> */}
             </form>
+
+            <div 
+                id='__modal' 
+                onClick={() => setShowModal(false)}
+                style={showModal ? {display: 'block'} : {display: 'none'}}
+            >
+                <div id='__text'>
+                    <p>{props.language === 'pol' ? 
+                        'Dziękujemy za wypełnienie formularza.' : 
+                        'Thank you for your inquiry'}
+                    </p>
+                    <p>{props.language === 'pol' ? 
+                        'Wkrótce się z Tobą skontaktujemy.' : 
+                        "We'll respond as soon as possible."}
+                    </p>
+                </div>
+            </div>
         </div>
     )
 }
