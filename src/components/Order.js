@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function Order(props) {
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
 
     return (
         <div className='Order'>
@@ -13,7 +13,7 @@ export default function Order(props) {
             </p>
             <form 
                 action="https://formsubmit.co/amglobal.transport@gmail.com" method="POST"
-                onSubmit={()=>{setShowModal(true)}}
+                // onSubmit={()=>{setShowModal(true)}}
             >
                 <div className='__area'>
                     <div className='__column'>
@@ -38,16 +38,22 @@ export default function Order(props) {
                     <input type="hidden" name="_subject" value="Zapytanie o wycenę transportu"/>
                 </div>
 
-                {/* <button> replaced with <input> due to Safari */}
-                {/* <input id='__button' type='submit' value={props.language === 'pol' ? 'Wyślij' : 'Send'} /> */}
-                <input id='__button' type='submit' value={props.language === 'pol' ? 'WYŚLIJ' : 'SEND'} />
-                {/* <button type="submit">{props.language === 'pol' ? 'Wyślij' : 'Send'}</button> */}
+                {/* <button> replaced with <input> due to Safari browser */}
+                <input id='__button' type='submit' value={props.language === 'pol' ? 'WYŚLIJ' : 'SUBMIT'} />
+
+                <input 
+                    type="hidden" 
+                    name="_next" 
+                    value={props.language === 'pol' ? 
+                        "https://amglobal.pl/#/thankspol" :
+                        "https://amglobal.pl/#/thankseng"}
+                ></input>
             </form>
 
-            <div 
+            {/* <div 
                 id='__modal' 
                 onClick={() => setShowModal(false)}
-                style={showModal ? {display: 'block'} : {display: 'none'}}
+                // style={showModal ? {display: 'block'} : {display: 'none'}}
             >
                 <div id='__text'>
                     <p>{props.language === 'pol' ? 
@@ -59,7 +65,7 @@ export default function Order(props) {
                         "We'll respond as soon as possible."}
                     </p>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
