@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 
 import background1 from '../assets/thumbnails/img1.jpg';
 import background2 from '../assets/thumbnails/img2.jpg';
@@ -16,9 +16,12 @@ import picture5 from '../assets/gallery/img5.jpg';
 import picture6 from '../assets/gallery/img6.jpg';
 import picture7 from '../assets/gallery/img7.jpg';
 
-export default function Gallery(props) {
+export default function Gallery(props: {language: string}) {
     const [showSlider, setShowSlider] = useState(false);
     const [currentImage, setCurrentImage] = useState(0);
+    // let thumbnails: HTMLDivElement[] = [];
+    let thumbnails: ReactElement[] = [];
+    // let thumbnails: any[] = [];
     const backgrounds = [
         background1,
         background2,
@@ -55,16 +58,19 @@ export default function Gallery(props) {
         'All our trucks can be loaded sideways',
         'We are a trustworthy company so choose us!'
     ];
-    let thumbnails = [];
 
-    const displaySlider = (e) => {
+    // const displaySlider: any = (e: Event): void => {
+    const displaySlider = (e: any): void => {
         setShowSlider(true);
-        let theImage = e.target.dataset.digit;
-        setCurrentImage(theImage);
+        const target = e.target as HTMLDivElement;
+        let theImage = target.dataset.digit;
+        setCurrentImage(Number(theImage));
     }
 
-    const closeSlider = (e) => {
-        if (e.target.className==='right' || e.target.className==='left') return;
+    // const closeSlider: any = (e: Event): void => {
+    const closeSlider = (e: any): void => {
+        const target = e.target as HTMLDivElement;
+        if (target.className==='right' || target.className==='left') return;
         setShowSlider(false);
     }
 
@@ -93,8 +99,8 @@ export default function Gallery(props) {
                     backgroundImage: `url(${backgrounds[i]})`
                 }} 
                 key={`Key ${i+1}`} 
-                alt={`Usługi transportowe, zdjęcie nr ${i+1}`} 
-                onClick={displaySlider}
+                onClick={(e) => displaySlider(e)}
+                // onClick={displaySlider}
             >
                 <div data-digit={i}>
                     <p data-digit={i}>{props.language === 'pol' ? descriptionsPol[i] : descriptionsEng[i]}</p>
