@@ -1,4 +1,3 @@
-import React from 'react';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
@@ -6,11 +5,11 @@ import './App.scss';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Gallery from './components/Gallery';
-import Menu from './components/Menu';
-import Order from './components/Order';
-import ThanksPol from './components/ThanksPol';
-import ThanksEng from './components/ThanksEng';
+import Gallery from './components/Gallery.js';
+import Menu from './components/Menu.js';
+import Order from './components/Order.tsx';
+import ThanksPol from './components/ThanksPol.tsx';
+import ThanksEng from './components/ThanksEng.tsx';
 
 import './sass/components/About.scss';
 import './sass/components/Contact.scss';

@@ -16,8 +16,6 @@ import picture5 from '../assets/gallery/img5.jpg';
 import picture6 from '../assets/gallery/img6.jpg';
 import picture7 from '../assets/gallery/img7.jpg';
 
-// import Slider from '../components/Slider';
-
 export default function Gallery(props) {
     const [showSlider, setShowSlider] = useState(false);
     const [currentImage, setCurrentImage] = useState(0);

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
+// export default function Menu(props: {language: string}) {
 export default function Menu(props) {
     const bottomRef = useRef();
     const btnMenuRef = useRef();
@@ -8,6 +9,7 @@ export default function Menu(props) {
     const [wallpaperVisible, setWallpaperVisible] = useState(true);
     const [showMenu, setShowMenu] = useState(false);
 
+    // const menuScrolling = (e): void => {
     const menuScrolling = (e) => {
         let screenWidth = window.innerWidth; // Number
         

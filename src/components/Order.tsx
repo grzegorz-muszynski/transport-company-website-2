@@ -1,8 +1,4 @@
-import { useState } from 'react';
-
-export default function Order(props) {
-    // const [showModal, setShowModal] = useState(false);
-
+export default function Order(props: {language: string}) {
     return (
         <div className='Order'>
             <h1>{props.language === 'pol' ? 'Formularz kontaktowy' : 'Contact form'}</h1>
@@ -13,7 +9,6 @@ export default function Order(props) {
             </p>
             <form 
                 action="https://formsubmit.co/amglobal.transport@gmail.com" method="POST"
-                // onSubmit={()=>{setShowModal(true)}}
             >
                 <div className='__area'>
                     <div className='__column'>
@@ -32,7 +27,7 @@ export default function Order(props) {
                             placeholder={props.language === 'pol' ? 'Ilość metrów ładownych' : 'Loading meters'} />
                     </div>
 
-                    <textarea name="comment" rows="8"
+                    <textarea name="comment" rows={8}
                         placeholder={props.language === 'pol' ? 'Komentarz do wyceny' : 'Commentary'}></textarea>
 
                     <input type="hidden" name="_subject" value="Zapytanie o wycenę transportu"/>
@@ -49,23 +44,6 @@ export default function Order(props) {
                         "https://amglobal.pl/#/thankseng"}
                 ></input>
             </form>
-
-            {/* <div 
-                id='__modal' 
-                onClick={() => setShowModal(false)}
-                // style={showModal ? {display: 'block'} : {display: 'none'}}
-            >
-                <div id='__text'>
-                    <p>{props.language === 'pol' ? 
-                        'Dziękujemy za wypełnienie formularza.' : 
-                        'Thank you for your inquiry'}
-                    </p>
-                    <p>{props.language === 'pol' ? 
-                        'Wkrótce się z Tobą skontaktujemy.' : 
-                        "We'll respond as soon as possible."}
-                    </p>
-                </div>
-            </div> */}
         </div>
     )
 }

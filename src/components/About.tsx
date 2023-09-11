@@ -1,4 +1,4 @@
-export default function About(props) {
+export default function About(props: {language: string}) {
 
     return (
         <div className='About'>
