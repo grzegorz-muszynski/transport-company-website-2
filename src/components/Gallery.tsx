@@ -94,13 +94,12 @@ export default function Gallery(props: {language: string}) {
     for (let i = 0; i < 7; i++) {
         thumbnails.push(
             <div
-                className='__thumbnail'
+                className={`__thumbnail __thumbnail-${i+1}`}
                 style={{
                     backgroundImage: `url(${backgrounds[i]})`
                 }} 
                 key={`Key ${i+1}`} 
-                onClick={(e) => displaySlider(e)}
-                // onClick={displaySlider}
+                onClick={displaySlider}
             >
                 <div data-digit={i}>
                     <p data-digit={i}>{props.language === 'pol' ? descriptionsPol[i] : descriptionsEng[i]}</p>
