@@ -76,7 +76,6 @@ export default function Menu(props: {language: string}) {
                     <img 
                         src={require('../assets/logoDarkBlue2.png')} 
                         onClick={menuScrolling} 
-                        // onClick={(event) => {}} 
                         data-height={0} 
                         data-height2={0} 
                         data-height3={0} 
@@ -130,7 +129,7 @@ export default function Menu(props: {language: string}) {
             <div className='Wallpaper'>
                 <img 
                     className='Wallapepr__reference'
-                    src={require('../assets/wallpaper2.png')} 
+                    src={require('../assets/wallpaper2.webp')} 
                     alt='Wallpaper' 
                     ref={bottomRef}
                 />
