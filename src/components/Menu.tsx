@@ -1,16 +1,16 @@
-import { useEffect, useState, useRef } from 'react';
+import { ElementRef, MouseEvent, MutableRefObject, useEffect, useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
-// export default function Menu(props: {language: string}) {
-export default function Menu(props) {
-    const bottomRef = useRef();
-    const btnMenuRef = useRef();
-    const menuRef = useRef();
+// export default function Menu(props) {
+export default function Menu(props: {language: string}) {
+    const bottomRef = useRef<ElementRef<"img">>(null);
+    const btnMenuRef= useRef<ElementRef<"p">>(null);
+    const menuRef= useRef<ElementRef<"ul">>(null);
     const [wallpaperVisible, setWallpaperVisible] = useState(true);
     const [showMenu, setShowMenu] = useState(false);
 
-    // const menuScrolling = (e): void => {
-    const menuScrolling = (e) => {
+    // const menuScrolling = (e: React.SyntheticEvent<EventTarget>): void => {
+    const menuScrolling = (e: any): void => {
         let screenWidth = window.innerWidth; // Number
         
         if (screenWidth > 1220) {
@@ -42,7 +42,9 @@ export default function Menu(props) {
 
     // useEffect below closes menu whenever sth not being NavBar is clicked
     useEffect(() => {
-        function handler(e) {
+        function handler(e: any) {
+            // A frist if statement below used as a type guard
+            if (btnMenuRef.current === null || menuRef.current === null) return;
             if (!btnMenuRef.current.contains(e.target) && !menuRef.current.contains(e.target)) {
                 hideMenu();
             }
@@ -55,6 +57,7 @@ export default function Menu(props) {
             const entry = entries[0];
             setWallpaperVisible(entry.isIntersecting);
         });
+        if (!bottomRef.current) return; // type guard
         observer.observe(bottomRef.current);
     }, []);
 
@@ -73,6 +76,7 @@ export default function Menu(props) {
                     <img 
                         src={require('../assets/logoDarkBlue2.png')} 
                         onClick={menuScrolling} 
+                        // onClick={(event) => {}} 
                         data-height={0} 
                         data-height2={0} 
                         data-height3={0} 
@@ -125,6 +129,7 @@ export default function Menu(props) {
             </div>
             <div className='Wallpaper'>
                 <img 
+                    className='Wallapepr__reference'
                     src={require('../assets/wallpaper2.png')} 
                     alt='Wallpaper' 
                     ref={bottomRef}

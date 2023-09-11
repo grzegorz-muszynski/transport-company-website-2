@@ -6,7 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Gallery from './components/Gallery.js';
-import Menu from './components/Menu.js';
+import Menu from './components/Menu.tsx';
 import Order from './components/Order.tsx';
 import ThanksPol from './components/ThanksPol.tsx';
 import ThanksEng from './components/ThanksEng.tsx';
