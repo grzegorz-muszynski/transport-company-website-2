@@ -94,7 +94,6 @@ export default function Gallery(props: {language: string}) {
         if (Number(currentImage) === 6) {
             setCurrentImage(0)
         } else {
-            console.log(typeof currentImage)
             setCurrentImage(Number(currentImage) + 1)
         }
     }
@@ -105,7 +104,9 @@ export default function Gallery(props: {language: string}) {
                 className={`__thumbnail __thumbnail-${i+1}`}
                 style={{
                     backgroundImage: `url(${backgrounds[i]})`
-                }} 
+                }}
+                // Changing data attribute below affects SCSS
+                data-__number={`Trucks-${i+1}`}
                 key={`Key ${i+1}`} 
                 onClick={displaySlider}
             >

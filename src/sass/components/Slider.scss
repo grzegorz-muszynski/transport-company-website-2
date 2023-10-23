@@ -10,21 +10,24 @@
     background-color: hsl(0, 0%, 0%, 0.8);
     display: flex;
     p {
+        margin: 0;
         color: white;
         position: absolute;
         font-size: 160px;
         height: 140px;
         line-height: 140px;
-        top: 25vh;
+        top: calc(50vh - 97px);
         &:hover {
             cursor: pointer;
         }
     }
+    // Left arrow
     .left {
-        left: 10%;
+        left: calc(20% - 80px);
     }
+    // Right arrow
     .right {
-        right: 10%;
+        right: calc(20% - 80px);
     }
     div {
         width: 100%;
@@ -42,7 +45,7 @@
 @media(max-width: $threshold2) {
     #slider {
         p {
-            top: 30vh;
+            top: calc(50vh - 97px);
             font-size: 120px;
         }
         .left {
@@ -61,7 +64,7 @@
 @media(max-width: $threshold3) {
     #slider {
         p {
-            top: 33vh;
+            top: calc(50vh - 84px);
             font-size: 90px;
         }
         .left {
@@ -75,14 +78,14 @@
 @media(max-width: $threshold4) {
     #slider {
         p {
-            top: 35vh;
+            top: calc(50vh - 80px);
             font-size: 60px;
         }
         .left {
-            left: 3%;
+            left: 3.5%;
         }
         .right {
-            right: 3%;
+            right: 3.5%;
         }
     }
 }
