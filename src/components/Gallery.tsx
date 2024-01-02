@@ -8,14 +8,6 @@ import background5 from '../assets/thumbnails/img5.webp';
 import background6 from '../assets/thumbnails/img6.webp';
 import background7 from '../assets/thumbnails/img7.webp';
 
-// import background1 from '../assets/thumbnails/img1.jpg';
-// import background2 from '../assets/thumbnails/img2.jpg';
-// import background3 from '../assets/thumbnails/img3.jpg';
-// import background4 from '../assets/thumbnails/img4.jpg';
-// import background5 from '../assets/thumbnails/img5.jpg';
-// import background6 from '../assets/thumbnails/img6.jpg';
-// import background7 from '../assets/thumbnails/img7.jpg';
-
 import picture1 from '../assets/gallery/img1.jpg';
 import picture2 from '../assets/gallery/img2.jpg';
 import picture3 from '../assets/gallery/img3.jpg';

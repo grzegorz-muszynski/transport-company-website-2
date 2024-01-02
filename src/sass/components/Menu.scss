@@ -1,10 +1,8 @@
 @import '../helpers/variables';
 
-* {
-    // border: 1px solid red;
-}
 .Menu {
-    p { // Menu button
+    // Menu button
+    p { 
         display: none;
     }
     .__flags {
@@ -25,7 +23,9 @@
         position: fixed;
         z-index: 3;
         top: 0;
-        img { // Small logo
+        
+        // Small logo
+        img { 
             position: absolute;
             width: 300px;
             top: 5px;
@@ -44,10 +44,12 @@
             opacity: 1;
             transition: all 1s; 
         }
-        .centered { // Classes sticked to ul element
+        // Classes sticked to ul element
+        .centered { 
             transition: all 800ms;
         }
-        .onRight { // Classes sticked to ul element
+        // Classes sticked to ul element
+        .onRight { 
             transform: translateX(200px);
             transition: all 800ms;
         }
@@ -83,10 +85,10 @@
 @media (max-width: $threshold1) {
     .Menu {
         .__navBar {
-            p { // Menu button
+            // Menu button
+            p { 
                 display: block;
                 position: fixed;
-                // z-index: 2;
                 top: 11px;
                 font-size: 20px;
                 color: white;
@@ -104,7 +106,9 @@
                 right: calc(50% - 250px);
                 transition: right 800ms;
             }
-            img { // Small logo
+
+            // Small logo
+            img {
                 left: calc(50% - 150px);
             }
             .centered { // Classes sticked to ul element
@@ -116,7 +120,6 @@
                 transform: translateX(0px);
             }
             .ul-shown {
-                // display: block;
                 z-index: 2;
                 visibility: visible;
                 opacity: 1;
@@ -124,13 +127,10 @@
                 transition: 500ms;             
             }
             .ul-hidden {
-                // display: none;
                 z-index: 2;
                 visibility: hidden;
                 opacity: 0.3;
-                // opacity: 0.95;
                 transform: translateY(-220px);
-                // transform: translateY(220px);
                 transition: 500ms;
             }
             ul {
@@ -149,7 +149,6 @@
                     margin: 0;
                     &:hover {
                         background-color: $blue;
-                        // transition: background-color 900ms;
                     }
                 }
             }
@@ -159,7 +158,8 @@
 @media (max-width: $threshold2) {
     .Menu {
         .__navBar {
-            img { // Small logo
+            // Small logo
+            img { 
                 display: none;
             }
             .moved {

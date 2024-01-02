@@ -87,7 +87,7 @@ export default function Menu(props: {language: string}) {
                     <ul 
                         className={
                             (wallpaperVisible && showMenu) ? 'centered ul-shown' : 
-                                ((wallpaperVisible && !showMenu) ? 'centered ul-hidden' :
+                                ((wallpaperVisible && !showMenu) ? 'centered ul-hidden' : 
                                     (!wallpaperVisible && showMenu) ? 'onRight ul-shown' : 'onRight ul-hidden')
                         }
                         ref={menuRef}
