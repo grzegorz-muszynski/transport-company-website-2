@@ -1,5 +1,6 @@
 import { ElementRef, useEffect, useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import menuScrolling from '../hooks/menuScrolling';
 
 // export default function Menu(props) {
 export default function Menu(props: {language: string}) {
@@ -10,25 +11,8 @@ export default function Menu(props: {language: string}) {
     const [showMenu, setShowMenu] = useState(false);
 
     // const menuScrolling = (e: React.SyntheticEvent<EventTarget>): void => {
-    const menuScrolling = (e: any): void => {
-        let screenWidth = window.innerWidth; // Number
-        
-        if (screenWidth > 1220) {
-            let height = Number(e.target.dataset.height);
-            window.scrollTo({ top: height, behavior: "smooth" });
-        } else if (screenWidth > 850) {
-            let height = Number(e.target.dataset.height2);
-            window.scrollTo({ top: height, behavior: "smooth" });
-        } else if (screenWidth > 570) {
-            let height = Number(e.target.dataset.height3);
-            window.scrollTo({ top: height, behavior: "smooth" });
-        } else if (screenWidth > 470) {
-            let height = Number(e.target.dataset.height4);
-            window.scrollTo({ top: height, behavior: "smooth" });
-        } else {
-            let height = Number(e.target.dataset.height5);
-            window.scrollTo({ top: height, behavior: "smooth" });
-        }
+    const scrollAndClose = (e: any): void => {
+        menuScrolling(e);
         setShowMenu(false)
     }
 
@@ -75,12 +59,8 @@ export default function Menu(props: {language: string}) {
                     >MENU</p>
                     <img 
                         src={require('../assets/logoDarkBlue2.png')} 
-                        onClick={menuScrolling} 
-                        data-height={0} 
-                        data-height2={0} 
-                        data-height3={0} 
-                        data-height4={0} 
-                        data-height5={0} 
+                        onClick={scrollAndClose} 
+                        data-height={'START'}  
                         className={wallpaperVisible ? 'hidden' : 'show'}
                         alt='Firma transportowa | AM Global | Miechów | Małopolskie | Zamów transport'
                     />
@@ -93,36 +73,20 @@ export default function Menu(props: {language: string}) {
                         ref={menuRef}
                     >
                         <li 
-                            onClick={menuScrolling} 
-                            data-height={720} 
-                            data-height2={720} 
-                            data-height3={720} 
-                            data-height4={440} 
-                            data-height5={440} 
+                            onClick={scrollAndClose} 
+                            data-height={'ABOUT'}   
                         >{props.language === 'pol' ? 'O NAS' : 'ABOUT'}</li>
                         <li 
-                            onClick={menuScrolling} 
-                            data-height={1100} 
-                            data-height2={1100} 
-                            data-height3={1300} 
-                            data-height4={930} 
-                            data-height5={1060} 
+                            onClick={scrollAndClose} 
+                            data-height={'GALLERY'}   
                         >{props.language === 'pol' ? 'GALERIA' : 'GALLERY'}</li>
                         <li 
-                            onClick={menuScrolling} 
-                            data-height={1700} 
-                            data-height2={1650} 
-                            data-height3={2500} 
-                            data-height4={1900} 
-                            data-height5={1760} 
+                            onClick={scrollAndClose} 
+                            data-height={'CONTACT'}
                         >{props.language === 'pol' ? 'KONTAKT' : 'CONTACT'}</li>
                         <li 
-                            onClick={menuScrolling} 
-                            data-height={4000} 
-                            data-height2={4000} 
-                            data-height3={4000} 
-                            data-height4={4000} 
-                            data-height5={3140} 
+                            onClick={scrollAndClose} 
+                            data-height={'ORDER'}
                         >{props.language === 'pol' ? 'ZAMÓW TRANSPORT' : 'ORDER QUOTATION'}</li>
                     </ul>
             </div>
